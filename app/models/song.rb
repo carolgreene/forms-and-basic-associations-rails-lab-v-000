@@ -23,16 +23,29 @@ class Song < ActiveRecord::Base
 
   def note_contents=(contents)
     contents.each do |content|
+<<<<<<< HEAD
       if content.strip != ""
         self.notes.build(content: content)
+=======
+      if content != " "
+        self.notes.build(content: content)
+
+>>>>>>> 21fd8b67b016f7d28866e6408740f694d08ac3b3
       end
     end
   end
 
   def note_contents
+<<<<<<< HEAD
     self.notes.collect do |note|
       note.content
     end
   end
 
+=======
+    self.note.content
+  end
+
+
+>>>>>>> 21fd8b67b016f7d28866e6408740f694d08ac3b3
 end
