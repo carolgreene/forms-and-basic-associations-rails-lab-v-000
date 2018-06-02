@@ -17,7 +17,7 @@ class Song < ActiveRecord::Base
   end
 
   def genre_name
-    self.genre.name
+    self.try(:genre).try(:name)                      #can use this instead of: self.genre ? self.genre.name : nil
   end
 
   def note_contents=(notes)
