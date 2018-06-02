@@ -9,7 +9,7 @@ class Song < ActiveRecord::Base
   end
 
   def artist_name
-    self.artist ? self.artist.name : nil
+    self.try(:artist).try(:name)                   #can use this instead of:  self.artist ? self.artist.name : nil
   end
 
   def genre_name=(name)
