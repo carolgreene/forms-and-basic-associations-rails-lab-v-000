@@ -28,12 +28,12 @@ class Song < ActiveRecord::Base
     end
   end
 
-  def note_content 
+  def note_content
     self.notes.collect do |note|
-      note.content 
+      note.content
     end
-  end 
-  
-      
+  end
+
+
 
 end
